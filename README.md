@@ -28,10 +28,12 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
 
                          🔁 Data Flow
-────────────────────────────────────────────────────────────
+
  Windows Agent  ───▶  Sends logs & alerts  ───▶  Wazuh Manager
+
+ 
  Wazuh Manager  ───▶  Analyzes & displays results  ───▶  Dashboard
-────────────────────────────────────────────────────────────
+
 
 ## ⚙️ Setup Steps
 ### Install Ubuntu on VirtualBox / VMware
