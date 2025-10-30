@@ -8,7 +8,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 |------------|------|-------------|
 | **Ubuntu (VM)** | Wazuh Manager | Central management and analysis dashboard |
 | **Windows (Host)** | Wazuh Agent | Collects and sends system logs to the manager |
-| **VirtualBox** | Virtualization Platform | Runs Ubuntu in an isolated environment |
+| **VirtualBox/VMware** | Virtualization Platform | Runs Ubuntu in an isolated environment |
 | **Wazuh** | SIEM Platform | Detects threats, analyzes logs, and visualizes data |
 
 ## 🗺️ System Diagram
@@ -39,11 +39,11 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 ## ⚙️ Setup Steps
 ### Install Ubuntu on VirtualBox / VMware
 1. Download Virtual Machine Software
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
-- [VMware Workstation / Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
+- <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">VirtualBox</a>  
+- <a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion" target="_blank" rel="noopener noreferrer">VMware Workstation / Fusion</a>
 
 2. Download Ubuntu ISO
-- [Ubuntu Official Download](https://ubuntu.com/download)
+- <a href="https://ubuntu.com/download" target="_blank" rel="noopener noreferrer">Ubuntu Official Download</a>
 
 3. Create a New Virtual Machine
 **Settings:**
@@ -56,8 +56,9 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 Mount the Ubuntu ISO and complete the installation.
 
 **Video Tutorial:**  
-- [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
-- [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
+- <a href="https://www.youtube.com/watch?v=IOSEdXVmmpM" target="_blank" rel="noopener noreferrer">Download Ubuntu on VirtualBox</a>  
+- <a href="https://www.youtube.com/watch?v=CNAmlDEzqKo" target="_blank" rel="noopener noreferrer">Download Ubuntu on VMware</a>
+
 
 ### Install Wazuh Agent on Windows (Host)
 
@@ -69,6 +70,7 @@ Mount the Ubuntu ISO and complete the installation.
 ## Troubleshoot
    
 ## 🧾 Resources
-- [Wazuh Official Documentation](https://documentation.wazuh.com)
-- [Install Ubuntu on VirtualBox (Video)](https://www.youtube.com/watch?v=IOSEdXVmmpM)
-- [VirtualBox Download Page](https://www.virtualbox.org/wiki/Downloads)
+- <a href="https://documentation.wazuh.com" target="_blank" rel="noopener noreferrer">Wazuh Official Documentation</a>  
+- <a href="https://www.youtube.com/watch?v=IOSEdXVmmpM" target="_blank" rel="noopener noreferrer">Install Ubuntu on VirtualBox (Video)</a>  
+- <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">VirtualBox Download Page</a>
+
