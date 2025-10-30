@@ -39,11 +39,11 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 ## ⚙️ Setup Steps
 ### Install Ubuntu on VirtualBox / VMware
 1. Download Virtual Machine Software
-- <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a>  
-- <a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion" target="_blank" rel="noopener noreferrer">VMware Workstation / Fusion</a>
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
+- [VMware Workstation / Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
 
 2. Download Ubuntu ISO
-- <a href="https://ubuntu.com/download" target="_blank" rel="noopener noreferrer">Ubuntu Official Download</a>
+- [Ubuntu Official Download](https://ubuntu.com/download)
 
 3. Create a New Virtual Machine
 **Settings:**
@@ -56,21 +56,133 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 Mount the Ubuntu ISO and complete the installation.
 
 **Video Tutorial:**  
-- <a href="https://www.youtube.com/watch?v=IOSEdXVmmpM" target="_blank" rel="noopener noreferrer">Download Ubuntu on VirtualBox</a>  
-- <a href="https://www.youtube.com/watch?v=CNAmlDEzqKo" target="_blank" rel="noopener noreferrer">Download Ubuntu on VMware</a>
+- [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
+- [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
 
+### Save the IP addresses
+Before proceeding, note down the IP addresses of both your **Windows** and **Ubuntu** machines.
+We will need them later for configuration and connection setup.
+
+To check the IP address on your Ubuntu system, run:
+```bash
+ip a
+```
+or 
+```bash
+hostname -I
+```
+
+On Windows:
+```bash
+Get-NetIPAddress
+```
+
+### Install Wazuh Manager on Ubuntu (VM)
+Update your system:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+Install curl, Wazuh Manager ,and Dashboard using the official quick setup:
+```bash
+sudo su
+curl -sO https://packages.wazuh.com/4.x/wazuh-install.sh                
+bash ./wazuh-install.sh -a
+```
+Note: Installation takes around 20-30min
+
+After installation, open the Wazuh Dashboard in your browser:
+```
+https://<Ubuntu_IP>:443
+```
+Log in with the credentials displayed during installation (default user: admin).
+
+Video Tutorial (Youtube): 
+[Install Wazuh On Ubuntu](https://www.youtube.com/watch?v=JTGMWH2w2p4)
 
 ### Install Wazuh Agent on Windows (Host)
+Download and install the Wazuh Agent for Windows:
+- [Wazuh Agent for Windows (Official Download)](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-windows.html)
 
-
-### Install Wazuh Manageron Ubuntu (VM)
+**Steps:**
+1. Run the installer.  
+2. When prompted, configure:
+   ![Wazuh Agent Interface](images/wazuh-agent-interface.png)(images/wazuh-agent-interface.png)
+   - **Manager IP:** your Ubuntu VM’s IP (e.g., `192.168.1.100`)  
+   - **Authentication Key:** Generated from from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
+3. Complete the installation and start the Wazuh Agent service.  
+4. Verify the connection from your Ubuntu Wazuh Dashboard under:  
+   ```
+   Management → Agents
+   ```
 
 ## Testing the Setup
+1. On Ubuntu, open the Wazuh Dashboard
+   ```
+   https://<Ubuntu_IP>:443
+   ```
+   Navigate to:
+   ```
+   Management → Agents
+   ```
+   Verify that your Windows agent appears as active.
+
+   
+    ![Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)(images/dashboard-before-linking-agent.png)
+    ![Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)(images/dashboard-after-linking-agent.png)
+
+2. On Windows, generate a test alert:
+   Open PowerShell and run:
+   ```bash
+   type C:\Windows\System32\drivers\etc\hosts
+   ```
+   Check the Wazuh Dashboard for a new alert under Security Events.
+3. 
+
+
+
 
 ## Troubleshoot
+### Network Connection
+If you’re having trouble connecting to the internet or resolving domains inside Ubuntu, try the following steps:
+1. **Check your network type:**  
+   Make sure the virtual machine is connected to a **NAT network** in VirtualBox or VMware.
+2. **Reconnect the network:**  
+   Disconnect and then reconnect your VM’s network adapter.
+3. **Restart the machine:**  
+   A simple reboot can often resolve temporary connection issues.
+   ```bash
+   sudo reboot
+   ```
+4. **Verify connectivity**
+   After restarting, run the following commands to confirm that your internet connection is working properly.
+   ```bash
+   ping google.com
+   sudo apt update
+   ```
+
+### Missing Packages
+If you encounter missing or broken package errors while installing Ubuntu, run:
+```bash
+sudo apt update
+sudo apt install -f --fix-missing
+```
+or 
+
+Restart the resolver
+```bash
+sudo systemctl restart systemd-resolved
+```
+Recreate /etc/resolv.conf if it's broken
+```bash
+ls -l /etc/resolv.conf
+# If it's NOT a symlink to /run/systemd/resolve/stub-resolv.conf, fix it:
+sudo rm -f /etc/resolv.conf
+sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+sudo systemctl restart systemd-resolved
+```
+
    
 ## 🧾 Resources
-- <a href="https://documentation.wazuh.com" target="_blank" rel="noopener noreferrer">Wazuh Official Documentation</a>  
-- <a href="https://www.youtube.com/watch?v=IOSEdXVmmpM" target="_blank" rel="noopener noreferrer">Install Ubuntu on VirtualBox (Video)</a>  
-- <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">VirtualBox Download Page</a>
-
+- [Wazuh Official Documentation](https://documentation.wazuh.com)
+- [Install Ubuntu on VirtualBox (Video)](https://www.youtube.com/watch?v=IOSEdXVmmpM)
+- [VirtualBox Download Page](https://www.virtualbox.org/wiki/Downloads)
