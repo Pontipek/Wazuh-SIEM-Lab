@@ -65,6 +65,8 @@ Mount the Ubuntu ISO and complete the installation.
 ### Install Wazuh Manageron Ubuntu (VM)
 
 ## Testing the Setup
+
+## Troubleshoot
    
 ## 🧾 Resources
 - [Wazuh Official Documentation](https://documentation.wazuh.com)
