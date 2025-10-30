@@ -12,7 +12,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 | **Wazuh** | SIEM Platform | Detects threats, analyzes logs, and visualizes data |
 
 ## 🗺️ System Diagram
-'''
+
                  ┌──────────────────────────────────┐
                  │          Ubuntu VM               │
                  │   Wazuh Manager & Dashboard      │
@@ -30,11 +30,11 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
                          🔁 Data Flow
 
- Windows Agent  ───▶  Sends logs & alerts  ───▶  Wazuh Manager
+         Windows Agent  ───▶  Sends logs & alerts  ───▶  Wazuh Manager
 
 
- Wazuh Manager  ───▶  Analyzes & displays results  ───▶  Dashboard
-'''
+         Wazuh Manager  ───▶  Analyzes & displays results  ───▶  Dashboard
+
 
 ## ⚙️ Setup Steps
 ### Install Ubuntu on VirtualBox / VMware
