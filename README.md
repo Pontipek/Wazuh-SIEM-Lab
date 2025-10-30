@@ -38,7 +38,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
                      Wazuh Manager  ───▶  Analyzes & displays results  ───▶  Dashboard
 
-
+---
 ## ⚙️ Setup Steps
 ### Install Ubuntu on VirtualBox / VMware
 1. Download Virtual Machine Software
@@ -118,7 +118,7 @@ Download and install the Wazuh Agent for Windows:
    Management → Agents
    ```
 
-
+---
 ## Testing the Setup
 1. On Ubuntu, open the Wazuh Dashboard
    ```
@@ -132,6 +132,8 @@ Download and install the Wazuh Agent for Windows:
 
 
     ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)
+    
+
     ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)
 
 2. Generate a test alert from Windows
@@ -157,6 +159,8 @@ Download and install the Wazuh Agent for Windows:
    - Save and restart the Wazuh Agent service to apply the changes.
    - test the setup by adding or modifying a file inside the C:\wazuh-test folder. Wazuh should generate a   real-time alert in the dashboard under **Security Events → File Integrity Monitoring**.
    ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)] (images/file-monitoring-without-alert.png)
+
+   
    ![[File Monitoring With Alert](images/file-monitoring-with-alert.png)] (images/file-monitoring-with-alert.png)
 
 
@@ -200,8 +204,12 @@ sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 sudo systemctl restart systemd-resolved
 ```
 
-   
+  
 ## 🧾 Resources
 - [Wazuh Official Documentation](https://documentation.wazuh.com)
+- [Wazuh GitHub Repository](https://github.com/wazuh/wazuh)
 - [Install Ubuntu on VirtualBox (Video)](https://www.youtube.com/watch?v=IOSEdXVmmpM)
 - [VirtualBox Download Page](https://www.virtualbox.org/wiki/Downloads)
+
+---
+**Last Updated:** October 2025
