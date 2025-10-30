@@ -85,7 +85,7 @@ Update your system:
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-Install curl, Wazuh Manager ,and Dashboard using the official quick setup:
+Install curl, Wazuh Manager, and Dashboard using the official quick setup:
 ```bash
 sudo su
 curl -sO https://packages.wazuh.com/4.x/wazuh-install.sh                
@@ -109,7 +109,11 @@ Download and install the Wazuh Agent for Windows:
 **Steps:**
 1. Run the installer.  
 2. When prompted, configure:
+
+
    ![[Wazuh Agent Interface](images/wazuh-agent-interface.png)](images/wazuh-agent-interface.png)
+
+
    - **Manager IP:** your Ubuntu VM’s IP (e.g., `192.168.1.100`)  
    - **Authentication Key:** Generated from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
 3. Complete the installation and start the Wazuh Agent service.  
@@ -130,8 +134,11 @@ Download and install the Wazuh Agent for Windows:
    ```
    Verify that your Windows agent appears as active.
 
+
     ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)
     
+
+
 
     ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)
 
