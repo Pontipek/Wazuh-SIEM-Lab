@@ -1,7 +1,9 @@
 # Cybersecurity SIEM Lab with Wazuh
 
+
 ## Overview
 This lab demonstrates how to set up and configure Wazuh, an open-source Security Information and Event Management (SIEM) platform. Wazuh provides real-time monitoring, intrusion detection, log analysis, and incident response capabilities for Linux and Windows environments. In this setup, Windows acts as the Wazuh Agent, Ubuntu as the Manager, and VMware/VirtualBox hosts the virtual environment.
+
 
 ## Lab Components
 | Component | Role | Description |
@@ -10,6 +12,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 | **Windows (Host)** | Wazuh Agent | Collects and sends system logs to the manager |
 | **VirtualBox/VMware** | Virtualization Platform | Runs Ubuntu in an isolated environment |
 | **Wazuh** | SIEM Platform | Detects threats, analyzes logs, and visualizes data |
+
 
 ## 🗺️ System Diagram
 
@@ -66,15 +69,15 @@ We will need them later for configuration and connection setup.
 To check the IP address on your Ubuntu system, run:
 ```bash
 ip a
-```
-or 
-```bash
+# or 
 hostname -I
 ```
 
 On Windows:
 ```bash
 Get-NetIPAddress
+# or
+ifconfig
 ```
 
 ### Install Wazuh Manager on Ubuntu (VM)
@@ -106,7 +109,7 @@ Download and install the Wazuh Agent for Windows:
 **Steps:**
 1. Run the installer.  
 2. When prompted, configure:
-   ![Wazuh Agent Interface](images/wazuh-agent-interface.png)(images/wazuh-agent-interface.png)
+   ![Wazuh Agent Interface](images/wazuh-agent-interface.png) (images/wazuh-agent-interface.png)
    - **Manager IP:** your Ubuntu VM’s IP (e.g., `192.168.1.100`)  
    - **Authentication Key:** Generated from from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
 3. Complete the installation and start the Wazuh Agent service.  
@@ -114,6 +117,7 @@ Download and install the Wazuh Agent for Windows:
    ```
    Management → Agents
    ```
+
 
 ## Testing the Setup
 1. On Ubuntu, open the Wazuh Dashboard
@@ -126,23 +130,38 @@ Download and install the Wazuh Agent for Windows:
    ```
    Verify that your Windows agent appears as active.
 
-   
-    ![Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)(images/dashboard-before-linking-agent.png)
-    ![Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)(images/dashboard-after-linking-agent.png)
 
-2. On Windows, generate a test alert:
+    ![Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png) (images/dashboard-before-linking-agent.png)
+    ![Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png) (images/dashboard-after-linking-agent.png)
+
+2. Generate a test alert from Windows
    Open PowerShell and run:
    ```bash
    type C:\Windows\System32\drivers\etc\hosts
    ```
    Check the Wazuh Dashboard for a new alert under Security Events.
-3. 
 
-
+3. File monitoring alert
+   - **Create a test folder:**  
+    On windows, create a folder and copy the path (e.g., C:\wazuh-test).
+   - **Open the Wazuh Agent configuration file:**  
+    Run **Notepad as Administrator**, then open the following file:  
+    ```
+    "C:\Program Files (x86)\ossec-agent\ossec.conf"
+    ```
+   - **Add the directory to monitor:**  
+    Inside the `<ossec_config>` section, add the following line (replace the path with your test folder):
+    ```xml
+    <directories realtime="yes">C:\wazuh-test</directories>
+    ```
+   - Save and restart the Wazuh Agent service to apply the changes.
+   - test the setup by adding or modifying a file inside the C:\wazuh-test folder. Wazuh should generate a   real-time alert in the dashboard under **Security Events → File Integrity Monitoring**.
+   ![File Monitoring Without Alert](images/file-monitoring-without-alert.png) 
+   ![File Monitoring With Alert](images/file-monitoring-with-alert.png) 
 
 
 ## Troubleshoot
-### Network Connection
+#### Network Connection
 If you’re having trouble connecting to the internet or resolving domains inside Ubuntu, try the following steps:
 1. **Check your network type:**  
    Make sure the virtual machine is connected to a **NAT network** in VirtualBox or VMware.
@@ -160,7 +179,7 @@ If you’re having trouble connecting to the internet or resolving domains insid
    sudo apt update
    ```
 
-### Missing Packages
+#### Missing Packages
 If you encounter missing or broken package errors while installing Ubuntu, run:
 ```bash
 sudo apt update
