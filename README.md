@@ -39,7 +39,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 ## ⚙️ Setup Steps
 ### Install Ubuntu on VirtualBox / VMware
 1. Download Virtual Machine Software
-- <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">VirtualBox</a>  
+- <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a>  
 - <a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion" target="_blank" rel="noopener noreferrer">VMware Workstation / Fusion</a>
 
 2. Download Ubuntu ISO
