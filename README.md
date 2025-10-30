@@ -109,7 +109,7 @@ Download and install the Wazuh Agent for Windows:
 **Steps:**
 1. Run the installer.  
 2. When prompted, configure:
-   ![[Wazuh Agent Interface](images/wazuh-agent-interface.png)] (images/wazuh-agent-interface.png)
+   ![[Wazuh Agent Interface](images/wazuh-agent-interface.png)](images/wazuh-agent-interface.png)
    - **Manager IP:** your Ubuntu VM’s IP (e.g., `192.168.1.100`)  
    - **Authentication Key:** Generated from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
 3. Complete the installation and start the Wazuh Agent service.  
@@ -129,7 +129,6 @@ Download and install the Wazuh Agent for Windows:
    Management → Agents
    ```
    Verify that your Windows agent appears as active.
-
 
     ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)
     
@@ -158,10 +157,11 @@ Download and install the Wazuh Agent for Windows:
     ```
    - Save and restart the Wazuh Agent service to apply the changes.
    - test the setup by adding or modifying a file inside the C:\wazuh-test folder. Wazuh should generate a   real-time alert in the dashboard under **Security Events → File Integrity Monitoring**.
-   ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)] (images/file-monitoring-without-alert.png)
 
-   
-   ![[File Monitoring With Alert](images/file-monitoring-with-alert.png)] (images/file-monitoring-with-alert.png)
+   ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)](images/file-monitoring-without-alert.png)
+
+
+   ![[File Monitoring With Alert](images/file-monitoring-with-alert.png)](images/file-monitoring-with-alert.png)
 
 
 ## Troubleshoot
