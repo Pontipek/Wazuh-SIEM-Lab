@@ -60,7 +60,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
 - Mount the Ubuntu ISO and complete the installation.
 
-    **Video Tutorial:**  
+  **Video Tutorial (Youtube):**  
     - [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
     - [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
 
