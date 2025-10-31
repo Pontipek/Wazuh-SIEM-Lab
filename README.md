@@ -1,12 +1,14 @@
 # Cybersecurity SIEM Lab with Wazuh
 
+## 📑 Table of Contents
 
-## Overview
+---
+## 🌐Overview
 This lab demonstrates how to set up and configure Wazuh, an open-source Security Information and Event Management (SIEM) platform. Wazuh provides real-time monitoring, intrusion detection, log analysis, and incident response capabilities for Linux and Windows environments. In this setup, Windows acts as the Wazuh Agent, Ubuntu as the Manager, and VMware/VirtualBox hosts the virtual environment.
 
 
-## Lab Components
-| Component | Role | Description |
+## 💻Lab Components
+|Component |Role |Description |
 |------------|------|-------------|
 | **Ubuntu (VM)** | Wazuh Manager | Central management and analysis dashboard |
 | **Windows (Host)** | Wazuh Agent | Collects and sends system logs to the manager |
@@ -58,6 +60,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
 Mount the Ubuntu ISO and complete the installation.
 
+
 **Video Tutorial:**  
 - [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
 - [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
@@ -99,6 +102,7 @@ https://<Ubuntu_IP>:443
 ```
 Log in with the credentials displayed during installation (default user: admin).
 
+
 Video Tutorial (Youtube): 
 [Install Wazuh On Ubuntu](https://www.youtube.com/watch?v=JTGMWH2w2p4)
 
@@ -138,8 +142,6 @@ Download and install the Wazuh Agent for Windows:
     ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)
     
 
-
-
     ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)
 
 2. Generate a test alert from Windows
@@ -171,7 +173,7 @@ Download and install the Wazuh Agent for Windows:
    ![[File Monitoring With Alert](images/file-monitoring-with-alert.png)](images/file-monitoring-with-alert.png)
 
 
-## Troubleshoot
+## 🛠️Troubleshoot
 #### Network Connection
 If you’re having trouble connecting to the internet or resolving domains inside Ubuntu, try the following steps:
 1. **Check your network type:**  
@@ -212,7 +214,7 @@ sudo systemctl restart systemd-resolved
 ```
 
   
-## 🧾 Resources
+## 📚Resources
 - [Wazuh Official Documentation](https://documentation.wazuh.com)
 - [Wazuh GitHub Repository](https://github.com/wazuh/wazuh)
 - [Install Ubuntu on VirtualBox (Video)](https://www.youtube.com/watch?v=IOSEdXVmmpM)
