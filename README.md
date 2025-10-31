@@ -43,12 +43,12 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 ---
 ## ⚙️ Setup Steps
 ### 1. Install Ubuntu on VirtualBox / VMware
-- Download Virtual Machine Software
-    [VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
-    [VMware Workstation / Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
+- Download Virtual Machine Software<br />
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads) <br /> 
+[VMware Workstation / Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
 
-- Download Ubuntu ISO
-    [Ubuntu Official Download](https://ubuntu.com/download)
+- Download Ubuntu ISO<br />
+[Ubuntu Official Download](https://ubuntu.com/download)
 
 - Create a New Virtual Machine
     **Settings:**
@@ -60,26 +60,26 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
 - Mount the Ubuntu ISO and complete the installation.
 
-  **Video Tutorial (Youtube):**  
-    - [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
-    - [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
+  **Video Tutorial (Youtube):** <br />  
+  [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM) <br />  
+  [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
 
 ### 2. Save the IP addresses
 Before proceeding, note down the IP addresses of both your **Windows** and **Ubuntu** machines.
 We will need them later for configuration and connection setup.
 - To check the IP address on your Ubuntu system, run:
-```bash
-ip a
-# or 
-hostname -I
-```
+    ```bash
+    ip a
+    # or 
+    hostname -I
+    ```
 
 - On Windows:
-```bash
-Get-NetIPAddress
-# or
-ifconfig
-```
+    ```bash
+    Get-NetIPAddress
+    # or
+    ifconfig
+    ```
 
 ### 3. Install Wazuh Manager on Ubuntu (VM)
 Update your system:
