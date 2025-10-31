@@ -44,11 +44,11 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 ## ⚙️ Setup Steps
 ### 1. Install Ubuntu on VirtualBox / VMware
 - Download Virtual Machine Software
-  [VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
-  [VMware Workstation / Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
+    [VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
+    [VMware Workstation / Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
 
 - Download Ubuntu ISO
-  [Ubuntu Official Download](https://ubuntu.com/download)
+    [Ubuntu Official Download](https://ubuntu.com/download)
 
 - Create a New Virtual Machine
     **Settings:**
@@ -67,15 +67,14 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 ### 2. Save the IP addresses
 Before proceeding, note down the IP addresses of both your **Windows** and **Ubuntu** machines.
 We will need them later for configuration and connection setup.
-
-To check the IP address on your Ubuntu system, run:
+- To check the IP address on your Ubuntu system, run:
 ```bash
 ip a
 # or 
 hostname -I
 ```
 
-On Windows:
+- On Windows:
 ```bash
 Get-NetIPAddress
 # or
@@ -175,16 +174,16 @@ Download and install the Wazuh Agent for Windows:
 ## 🛠️Troubleshoot
 #### Network Connection
 If you’re having trouble connecting to the internet or resolving domains inside Ubuntu, try the following steps:
-1. **Check your network type:**  
+-  **Check your network type:**  
    Make sure the virtual machine is connected to a **NAT network** in VirtualBox or VMware.
-2. **Reconnect the network:**  
+-  **Reconnect the network:**  
    Disconnect and then reconnect your VM’s network adapter.
-3. **Restart the machine:**  
+-  **Restart the machine:**  
    A simple reboot can often resolve temporary connection issues.
    ```bash
    sudo reboot
    ```
-4. **Verify connectivity**
+-  **Verify connectivity**
    After restarting, run the following commands to confirm that your internet connection is working properly.
    ```bash
    ping google.com
