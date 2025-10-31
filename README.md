@@ -57,13 +57,12 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
     - **Version:** Ubuntu (64-bit)  
     - **Memory:** 4 GB  
     - **Storage:** 20 GB+
-      
+
 - Mount the Ubuntu ISO and complete the installation.
 
-
-**Video Tutorial:**  
-- [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
-- [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
+    **Video Tutorial:**  
+    - [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
+    - [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
 
 ### 2. Save the IP addresses
 Before proceeding, note down the IP addresses of both your **Windows** and **Ubuntu** machines.
