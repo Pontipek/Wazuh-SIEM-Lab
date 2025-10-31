@@ -8,7 +8,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
 
 ## 💻Lab Components
-|Component |Role |Description |
+| Component |Role | Description |
 |------------|------|-------------|
 | **Ubuntu (VM)** | Wazuh Manager | Central management and analysis dashboard |
 | **Windows (Host)** | Wazuh Agent | Collects and sends system logs to the manager |
@@ -42,7 +42,7 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
 ---
 ## ⚙️ Setup Steps
-### Install Ubuntu on VirtualBox / VMware
+### 1. Install Ubuntu on VirtualBox / VMware
 1. Download Virtual Machine Software
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
 - [VMware Workstation / Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
@@ -65,7 +65,7 @@ Mount the Ubuntu ISO and complete the installation.
 - [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM)  
 - [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
 
-### Save the IP addresses
+### 2. Save the IP addresses
 Before proceeding, note down the IP addresses of both your **Windows** and **Ubuntu** machines.
 We will need them later for configuration and connection setup.
 
@@ -83,7 +83,7 @@ Get-NetIPAddress
 ifconfig
 ```
 
-### Install Wazuh Manager on Ubuntu (VM)
+### 3. Install Wazuh Manager on Ubuntu (VM)
 Update your system:
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -106,7 +106,7 @@ Log in with the credentials displayed during installation (default user: admin).
 Video Tutorial (Youtube): 
 [Install Wazuh On Ubuntu](https://www.youtube.com/watch?v=JTGMWH2w2p4)
 
-### Install Wazuh Agent on Windows (Host)
+### 4. Install Wazuh Agent on Windows (Host)
 Download and install the Wazuh Agent for Windows:
 - [Wazuh Agent for Windows (Official Download)](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-windows.html)
 
@@ -127,7 +127,7 @@ Download and install the Wazuh Agent for Windows:
    ```
 
 ---
-## Testing the Setup
+## 5. Testing the Setup
 1. On Ubuntu, open the Wazuh Dashboard
    ```
    https://<Ubuntu_IP>:443
