@@ -60,8 +60,8 @@ This lab demonstrates how to set up and configure Wazuh, an open-source Security
 
 - Mount the Ubuntu ISO and complete the installation.
 
-  **Video Tutorial (Youtube):** <br />  
-  [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM) <br />  
+  **Video Tutorial (Youtube):** <br/>  
+  [Download Ubuntu on VirtualBox](https://www.youtube.com/watch?v=IOSEdXVmmpM) <br/>  
   [Download Ubuntu on VMware](https://www.youtube.com/watch?v=CNAmlDEzqKo)
 
 ### 2. Save the IP addresses
@@ -70,14 +70,14 @@ We will need them later for configuration and connection setup.
 - To check the IP address on your Ubuntu system, run:
     ```bash
     ip a
-    # or 
+    #or 
     hostname -I
     ```
 
 - On Windows:
     ```bash
     Get-NetIPAddress
-    # or
+    #or
     ifconfig
     ```
 
@@ -92,7 +92,7 @@ sudo su
 curl -sO https://packages.wazuh.com/4.x/wazuh-install.sh                
 bash ./wazuh-install.sh -a
 ```
-Note: Installation takes around 20-30min
+**Note:** Installation takes around 20-30min
 
 After installation, open the Wazuh Dashboard in your browser:
 ```
@@ -101,7 +101,7 @@ https://<Ubuntu_IP>:443
 Log in with the credentials displayed during installation (default user: admin).
 
 
-Video Tutorial (Youtube): 
+**Video Tutorial (Youtube):**<br/>
 [Install Wazuh On Ubuntu](https://www.youtube.com/watch?v=JTGMWH2w2p4)
 
 ### 4. Install Wazuh Agent on Windows (Host)
