@@ -1,4 +1,4 @@
-# Cybersecurity SIEM Lab with Wazuh
+# Cybersecurity SIEM Lab with Wazuh🔒
 
 ## 📑 Table of Contents
 - [Overview](#overview)
