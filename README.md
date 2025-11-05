@@ -104,7 +104,39 @@ Log in with the credentials displayed during installation (default user: admin).
 **Video Tutorial (Youtube):**<br/>
 [Install Wazuh On Ubuntu](https://www.youtube.com/watch?v=JTGMWH2w2p4)
 
-### 4. Install Wazuh Agent on Windows (Host)
+### 4. Add Windows Agent to Wazuh Manager & Extract Authentication Key
+Once Wazuh Manager is installed on your Ubuntu VM, follow these steps to register your Windows machine as an agent and generate the authentication key.
+
+On your Ubuntu VM, open a terminal and run:
+```bash
+sudo su
+/var/ossec/bin/manage_agents
+```
+This will launch the interactive Wazuh Agent Manager tool. You will be presented with a menu. Select:
+```
+(A)dd an agent
+```
+Provide the following details when prompted:
+
+- Agent Name: (e.g., windows-agent)
+
+- IP Address: The Windows machine’s IP address (that you noted earlier)
+
+Once submitted, Wazuh will assign an Agent ID (e.g., 001).
+
+
+![[Add New Agent](images/add-agent-ubuntu.png)](images/add-agent-ubuntu.png)
+
+
+After adding the agent, you will return to the main menu. Now choose:
+```
+(E)xtract key for an agent
+```
+Enter the Agent ID assigned in the previous step. Wazuh will then display a unique authentication key which is required to connect the Windows agent to the Wazuh Manager.
+
+![[Extract Authentication Key](images/extract-key-for-agent.png)](images/extract-key-for-agent.png)<br/>
+
+### 5. Install Wazuh Agent on Windows (Host)
 Download and install the Wazuh Agent for Windows:
 - [Wazuh Agent for Windows (Official Download)](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-windows.html)
 
@@ -125,7 +157,7 @@ Download and install the Wazuh Agent for Windows:
    ```
 
 ---
-## 5. Testing the Setup
+## 6. Testing the Setup
 1. On Ubuntu, open the Wazuh Dashboard
    ```
    https://<Ubuntu_IP>:443
@@ -134,13 +166,11 @@ Download and install the Wazuh Agent for Windows:
    ```
    Management → Agents
    ```
-   Verify that your Windows agent appears as active.
+   Verify that your Windows agent appears as active.<br/>
 
-
-    ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)
+    ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)<br/>
     
-
-    ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)
+    ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)<br/>
 
 2. Generate a test alert from Windows
    Open PowerShell and run:
@@ -165,11 +195,9 @@ Download and install the Wazuh Agent for Windows:
    - Save and restart the Wazuh Agent service to apply the changes.
    - test the setup by adding or modifying a file inside the C:\wazuh-test folder. Wazuh should generate a   real-time alert in the dashboard under **Security Events → File Integrity Monitoring**.
 
-   ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)](images/file-monitoring-without-alert.png)
+   ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)](images/file-monitoring-without-alert.png)<br/>
 
-
-   ![[File Monitoring With Alert](images/file-monitoring-with-alert.png)](images/file-monitoring-with-alert.png)
-
+   ![[File Monitoring With Alert](images/file-monitoring-with-alert.png)](images/file-monitoring-with-alert.png)<br/>
 
 ## 🛠️Troubleshoot
 #### Network Connection
