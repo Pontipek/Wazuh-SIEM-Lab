@@ -168,9 +168,9 @@ Download and install the Wazuh Agent for Windows:
    ```
    Verify that your Windows agent appears as active.<br/>
 
-    ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)<br/>
+    ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)<br/><br/>
     
-    ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)<br/>
+    ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)
 
 2. Generate a test alert from Windows
    Open PowerShell and run:
@@ -195,7 +195,7 @@ Download and install the Wazuh Agent for Windows:
    - Save and restart the Wazuh Agent service to apply the changes.
    - test the setup by adding or modifying a file inside the C:\wazuh-test folder. Wazuh should generate a   real-time alert in the dashboard under **Security Events → File Integrity Monitoring**.
 
-   ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)](images/file-monitoring-without-alert.png)<br/>
+   ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)](images/file-monitoring-without-alert.png)<br/><br/>
 
    ![[File Monitoring With Alert](images/file-monitoring-with-alert.png)](images/file-monitoring-with-alert.png)<br/>
 
@@ -247,4 +247,4 @@ sudo systemctl restart systemd-resolved
 - [VirtualBox Download Page](https://www.virtualbox.org/wiki/Downloads)
 
 ---
-**Last Updated:** October 2025
+**Last Updated:** November 2025
