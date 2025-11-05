@@ -141,8 +141,8 @@ Download and install the Wazuh Agent for Windows:
 - [Wazuh Agent for Windows (Official Download)](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-windows.html)
 
 **Steps:**
-a. Run the installer.  
-b. When prompted, configure:
+- Run the installer.  
+- When prompted, configure:
 
 
    ![[Wazuh Agent Interface](images/wazuh-agent-interface.png)](images/wazuh-agent-interface.png)
@@ -150,8 +150,8 @@ b. When prompted, configure:
 
    - **Manager IP:** your Ubuntu VM’s IP (e.g., `192.168.1.100`)  
    - **Authentication Key:** Generated from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
-c. Complete the installation and start the Wazuh Agent service.  
-d. Verify the connection from your Ubuntu Wazuh Dashboard under:  
+- Complete the installation and start the Wazuh Agent service.  
+- Verify the connection from your Ubuntu Wazuh Dashboard under:  
    ```
    Management → Agents
    ```
