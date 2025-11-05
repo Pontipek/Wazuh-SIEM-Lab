@@ -141,8 +141,8 @@ Download and install the Wazuh Agent for Windows:
 - [Wazuh Agent for Windows (Official Download)](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-windows.html)
 
 **Steps:**
-1. Run the installer.  
-2. When prompted, configure:
+a. Run the installer.  
+b. When prompted, configure:
 
 
    ![[Wazuh Agent Interface](images/wazuh-agent-interface.png)](images/wazuh-agent-interface.png)
@@ -150,15 +150,16 @@ Download and install the Wazuh Agent for Windows:
 
    - **Manager IP:** your Ubuntu VM’s IP (e.g., `192.168.1.100`)  
    - **Authentication Key:** Generated from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
-3. Complete the installation and start the Wazuh Agent service.  
-4. Verify the connection from your Ubuntu Wazuh Dashboard under:  
+c. Complete the installation and start the Wazuh Agent service.  
+d. Verify the connection from your Ubuntu Wazuh Dashboard under:  
    ```
    Management → Agents
    ```
 
 ---
 ## 6. Testing the Setup
-1. On Ubuntu, open the Wazuh Dashboard
+- Verify that your Windows agent appears as active<br/>
+   On Ubuntu, open the Wazuh Dashboard
    ```
    https://<Ubuntu_IP>:443
    ```
@@ -166,20 +167,20 @@ Download and install the Wazuh Agent for Windows:
    ```
    Management → Agents
    ```
-   Verify that your Windows agent appears as active.<br/>
+   <br/>
 
     ![[Wazuh Dashboard Before Connecting Agent](images/dashboard-before-linking-agent.png)](images/dashboard-before-linking-agent.png)<br/><br/>
     
     ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)
 
-2. Generate a test alert from Windows
+- Generate a test alert from Windows<br/>
    Open PowerShell and run:
    ```bash
    type C:\Windows\System32\drivers\etc\hosts
    ```
    Check the Wazuh Dashboard for a new alert under Security Events.
 
-3. File monitoring alert
+- File monitoring alert
    - **Create a test folder:**  
     On windows, create a folder and copy the path (e.g., C:\wazuh-test).
    - **Open the Wazuh Agent configuration file:**  
