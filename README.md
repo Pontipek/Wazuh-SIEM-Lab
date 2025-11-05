@@ -1,7 +1,13 @@
 # Cybersecurity SIEM Lab with Wazuh
 
 ## 📑 Table of Contents
-
+- [Overview](#overview)
+- [Lab Components](#lab-components)
+- [System Diagram](#%EF%B8%8F-system-diagram)
+- [Setup Steps](#%EF%B8%8F-setup-steps)
+- [Testing the Setup](#6-testing-the-setup)
+- [Troubleshoot](#%EF%B8%8Ftroubleshoot)
+- [Resources](#resources)
 ---
 ## 🌐Overview
 This lab demonstrates how to set up and configure Wazuh, an open-source Security Information and Event Management (SIEM) platform. Wazuh provides real-time monitoring, intrusion detection, log analysis, and incident response capabilities for Linux and Windows environments. In this setup, Windows acts as the Wazuh Agent, Ubuntu as the Manager, and VMware/VirtualBox hosts the virtual environment.
@@ -141,7 +147,7 @@ Download and install the Wazuh Agent for Windows:
 - [Wazuh Agent for Windows (Official Download)](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/wazuh-agent-package-windows.html)
 
 **Steps:**
-- Run the installer.  
+- Run the installer  
 - When prompted, configure:
 
 
@@ -158,7 +164,7 @@ Download and install the Wazuh Agent for Windows:
 
 ---
 ## 6. Testing the Setup
-- Verify that your Windows agent appears as active<br/>
+- **Verify that your Windows agent appears as active**<br/>
    On Ubuntu, open the Wazuh Dashboard
    ```
    https://<Ubuntu_IP>:443
@@ -173,22 +179,22 @@ Download and install the Wazuh Agent for Windows:
     
     ![[Wazuh Dashboard After Connecting Agent](images/dashboard-after-linking-agent.png)](images/dashboard-after-linking-agent.png)
 
-- Generate a test alert from Windows<br/>
+- **Generate a test alert from Windows**<br/>
    Open PowerShell and run:
    ```bash
    type C:\Windows\System32\drivers\etc\hosts
    ```
    Check the Wazuh Dashboard for a new alert under Security Events.
 
-- File monitoring alert
-   - **Create a test folder:**  
+- **File monitoring alert**
+   - Create a test folder:  
     On windows, create a folder and copy the path (e.g., C:\wazuh-test).
-   - **Open the Wazuh Agent configuration file:**  
-    Run **Notepad as Administrator**, then open the following file:  
+   - Open the Wazuh Agent configuration file: 
+    Run Notepad as Administrator, then open the following file:  
     ```
     "C:\Program Files (x86)\ossec-agent\ossec.conf"
     ```
-   - **Add the directory to monitor:**  
+   - Add the directory to monitor: 
     Inside the `<ossec_config>` section, add the following line (replace the path with your test folder):
     ```xml
     <directories realtime="yes">C:\wazuh-test</directories>
@@ -203,17 +209,13 @@ Download and install the Wazuh Agent for Windows:
 ## 🛠️Troubleshoot
 #### Network Connection
 If you’re having trouble connecting to the internet or resolving domains inside Ubuntu, try the following steps:
--  **Check your network type:**  
-   Make sure the virtual machine is connected to a **NAT network** in VirtualBox or VMware.
--  **Reconnect the network:**  
-   Disconnect and then reconnect your VM’s network adapter.
--  **Restart the machine:**  
-   A simple reboot can often resolve temporary connection issues.
+-  Check your network type by making sure the virtual machine is connected to a NAT network in VirtualBox or VMware.
+-  Disconnect and then reconnect your VM’s network adapter.
+-  Restart/reboot the machine to resolve temporary connection issues:
    ```bash
    sudo reboot
    ```
--  **Verify connectivity**
-   After restarting, run the following commands to confirm that your internet connection is working properly.
+-  After restarting, run the following commands to confirm that your internet connection is working properly:
    ```bash
    ping google.com
    sudo apt update
