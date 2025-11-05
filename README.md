@@ -155,7 +155,7 @@ Download and install the Wazuh Agent for Windows:
 
 
    - **Manager IP:** your Ubuntu VM’s IP (e.g., `192.168.1.100`)  
-   - **Authentication Key:** Generated from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
+   - **Authentication Key:** generated from /var/ossec/bin/manage_agents on ubuntu (e.g., `kdhgdjbbhsbnshnxb`)
 - Complete the installation and start the Wazuh Agent service.  
 - Verify the connection from your Ubuntu Wazuh Dashboard under:  
    ```
@@ -187,8 +187,7 @@ Download and install the Wazuh Agent for Windows:
    Check the Wazuh Dashboard for a new alert under Security Events.
 
 - **File monitoring alert**
-   - Create a test folder:  
-    On windows, create a folder and copy the path (e.g., C:\wazuh-test).
+   - On windows, create a test folder and copy the path (e.g., C:\wazuh-test).
    - Open the Wazuh Agent configuration file: 
     Run Notepad as Administrator, then open the following file:  
     ```
@@ -200,7 +199,7 @@ Download and install the Wazuh Agent for Windows:
     <directories realtime="yes">C:\wazuh-test</directories>
     ```
    - Save and restart the Wazuh Agent service to apply the changes.
-   - test the setup by adding or modifying a file inside the C:\wazuh-test folder. Wazuh should generate a   real-time alert in the dashboard under **Security Events → File Integrity Monitoring**.
+   - Test the setup by adding or modifying a file inside the C:\wazuh-test folder. Wazuh should generate a   real-time alert in the dashboard under **Security Events → File Integrity Monitoring**.
 
    ![[File Monitoring Without Alert](images/file-monitoring-without-alert.png)](images/file-monitoring-without-alert.png)<br/><br/>
 
@@ -208,7 +207,7 @@ Download and install the Wazuh Agent for Windows:
 
 ## 🛠️Troubleshoot
 #### Network Connection
-If you’re having trouble connecting to the internet or resolving domains inside Ubuntu, try the following steps:
+If you are having trouble connecting to the internet or resolving domains inside Ubuntu, try the following steps:
 -  Check your network type by making sure the virtual machine is connected to a NAT network in VirtualBox or VMware.
 -  Disconnect and then reconnect your VM’s network adapter.
 -  Restart/reboot the machine to resolve temporary connection issues:
